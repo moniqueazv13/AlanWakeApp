@@ -69,4 +69,14 @@ dependencies {
 
     // Coil for Image Loading in Compose
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    // Testes (Opcional, mas boa prática)
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+
+    // Testes Unitários
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("io.mockk:mockk:1.13.10")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+    testImplementation("app.cash.turbine:turbine:1.0.0")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
 }

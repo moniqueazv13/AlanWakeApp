@@ -75,7 +75,6 @@ class TaskListViewModelTest {
         )
     )
 
-
     @Before
     fun setUp() {
         getGameInfoUseCase = mockk()
@@ -92,7 +91,6 @@ class TaskListViewModelTest {
 
             viewModel.gameState.test {
                 assertEquals(GameState.Success(mockGameInfo), awaitItem())
-
                 cancelAndIgnoreRemainingEvents()
             }
 

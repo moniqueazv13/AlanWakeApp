@@ -1,0 +1,118 @@
+{
+  "jogo": {
+    "titulo": "Alan Wake",
+    "informacoes_gerais": {
+      "desenvolvedora": "Remedy Entertainment",
+      "publicadora": {
+        "original": "Microsoft Game Studios",
+        "remastered": "Epic Games Publishing"
+      },
+      "datas_de_lancamento": {
+        "xbox_360": "2010-05-14",
+        "pc_windows": "2012-02-16",
+        "alan_wake_remastered": "2021-10-05"
+      },
+      "plataformas": [
+        "Xbox 360",
+        "PC (Windows)",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X/S",
+        "Nintendo Switch"
+      ],
+      "genero": [
+        "Ação-aventura",
+        "Survival Horror",
+        "Thriller Psicológico"
+      ],
+      "imagem_capa": "https://fr.web.img2.acsta.net/pictures/18/09/13/10/46/2488735.jpg"
+    },
+    "enredo_e_universo": {
+      "sinopse": "O famoso escritor de suspense Alan Wake viaja com sua esposa, Alice, para a cidade isolada de Bright Falls em busca de inspiração. Quando Alice desaparece misteriosamente, Alan se vê preso em um pesadelo vivo, onde as páginas de uma história de terror que ele não se lembra de ter escrito estão se tornando realidade. Perseguido por uma presença sombria, Alan deve usar a luz como sua principal arma para desvendar o mistério e salvar a mulher que ama.",
+      "cenario": {
+        "nome": "Bright Falls, Washington",
+        "descricao": "Uma cidade pitoresca e aparentemente tranquila no noroeste do Pacífico dos EUA. O cenário é caracterizado por suas densas florestas, uma comunidade unida, uma madeireira e o sinistro Lago Cauldron, o epicentro dos eventos sobrenaturais do jogo."
+      },
+      "conceitos_chave": [
+        {
+          "nome": "A Presença Sombria (The Dark Presence)",
+          "descricao": "A principal força antagonista do jogo, uma entidade antiga e poderosa que reside nas profundezas do Lago Cauldron e tem o poder de transformar ficção em realidade."
+        },
+        {
+          "nome": "Os Possuídos (The Taken)",
+          "descricao": "Humanos, animais e objetos inanimados que foram consumidos e controlados pela Presença Sombria. Eles são envoltos por um escudo de escuridão e são os principais inimigos do jogo."
+        },
+        {
+          "nome": "O Lugar Obscuro (The Dark Place)",
+          "descricao": "Uma dimensão de pesadelo sob o Lago Cauldron onde a criatividade e a realidade se fundem. É a fonte do poder da Presença Sombria e o local onde a ficção se torna real."
+        }
+      ]
+    },
+    "personagens": [
+      {
+        "nome": "Alan Wake",
+        "papel": "Protagonista",
+        "descricao": "Um escritor de best-sellers de Nova York que sofre de um bloqueio criativo. Cínico e inteligente, ele é forçado a lutar pela sua sanidade e pela vida de sua esposa.",
+        "imagem": "https://tm.ibxk.com.br/2021/10/14/14032212783001.jpg"
+      },
+      {
+        "nome": "Alice Wake",
+        "papel": "Esposa de Alan",
+        "descricao": "Uma fotógrafa talentosa e o pilar emocional de Alan. Seu desaparecimento no início do jogo serve como o principal catalisador para a trama.",
+        "imagem": "https://www.giantbomb.com/a/uploads/scale_small/1/13239/1374751-180px_alice_wake.png"
+      },
+      {
+        "nome": "Barry Wheeler",
+        "papel": "Amigo e Agente",
+        "descricao": "O agente literário e melhor amigo de Alan. Ele é medroso e exagerado, servindo como o principal alívio cômico do jogo, mas também é um aliado leal.",
+        "imagem": "https://www.voquent.com/blog/wp-content/uploads/2023/01/Barry.jpg"
+      },
+      {
+        "nome": "Sarah Breaker",
+        "papel": "Xerife de Bright Falls",
+        "descricao": "A xerife competente e cética de Bright Falls. Embora inicialmente desconfiada de Alan, ela gradualmente se torna uma de suas aliadas mais importantes.",
+        "imagem": "https://th.bing.com/th/id/OIP.zmVIeOjtb60bkZBsNVE5VgHaEK?r=0&rs=1&pid=ImgDetMain"
+      },
+      {
+        "nome": "Cynthia Weaver",
+        "papel": "A Dama da Luz",
+        "descricao": "Uma mulher idosa e reclusa que vive na usina de energia de Bright Falls. Ela tem um medo patológico da escuridão e possui conhecimento sobre a Presença Sombria.",
+        "imagem": "https://i.pinimg.com/originals/1f/78/79/1f78798df47ed3fa8183279f89365f75.png"
+      },
+      {
+        "nome": "Os Possuídos (The Taken)",
+        "papel": "Inimigos Comuns",
+        "descricao": "Habitantes de Bright Falls consumidos pela escuridão. Eles empunham armas como machados e motosserras e só podem ser feridos após seu escudo sombrio ser queimado pela luz.",
+        "imagem": "https://cdn.mos.cms.futurecdn.net/2mMVpgYEQDH3tLQzX3bqAk-1200-80.jpg"
+      }
+    ],
+    "galeria_de_imagens": [
+      {
+        "titulo": "Lutando com a Luz na Floresta",
+        "descricao": "Alan Wake usando sua lanterna para queimar a escuridão de um Possuído antes de atirar.",
+        "url": "https://gocdkeys.com/images/captures/alan-wake-remastered-ps5-4.jpg"
+      },
+      {
+        "titulo": "A Vista de Bright Falls",
+        "descricao": "Uma vista panorâmica da cidade de Bright Falls durante o dia, mostrando sua beleza antes da escuridão cair.",
+        "url": "https://www.giantbomb.com/a/uploads/scale_medium/1/13692/1383452-1338741_alan_wake_screenshots_xbox_360_36.jpg"
+      },
+      {
+        "titulo": "O Misterioso Lago Cauldron",
+        "descricao": "A cabana na ilha do Lago Cauldron, o ponto central dos eventos sobrenaturais do jogo.",
+        "url": "https://th.bing.com/th/id/OIP.A-6cUQWB9IyjehBmMQheVwHaD9?r=0&rs=1&pid=ImgDetMain"
+      },
+      {
+        "titulo": "Encontrando uma Página do Manuscrito",
+        "descricao": "Uma página do manuscrito 'Departure' flutuando, um colecionável que narra eventos futuros.",
+        "url": "https://criticalhits.com.br/wp-content/uploads/2023/07/deposito-1920x960.jpg"
+      },
+      {
+        "titulo": "Santuário de Luz",
+        "descricao": "Um poste de luz ou gerador que funciona como um ponto de refúgio e checkpoint, onde os inimigos não podem alcançar Alan.",
+        "url": "https://1.bp.blogspot.com/-N2uvvCXLtCM/VoHQml1HuWI/AAAAAAAARFo/MHQKFl2zVt8/s1600/AlanWake%2B%252890%2529.jpg"
+      }
+    ]
+  }
+}

@@ -28,6 +28,9 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun AlanWakeScreen(viewModel: AlanWakeViewModel = koinViewModel()) {
+
+    viewModel.loadGameInfo()
+
     val state by viewModel.gameState.collectAsState()
 
     Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {

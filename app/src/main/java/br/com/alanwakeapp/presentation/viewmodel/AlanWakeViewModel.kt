@@ -16,11 +16,8 @@ class AlanWakeViewModel(
     private val _gameState = MutableStateFlow<GameState>(GameState.Loading)
     val gameState: StateFlow<GameState> = _gameState.asStateFlow()
 
-    init {
-        loadGameInfo()
-    }
-
-    private fun loadGameInfo() {
+     fun loadGameInfo() {
+        _gameState.value = GameState.Loading
         getGameInfoUseCase().onEach { result ->
             result.onSuccess { gameInfo ->
                 _gameState.value = GameState.Success(gameInfo)

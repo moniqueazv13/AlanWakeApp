@@ -4,6 +4,7 @@
 - Koin (Injeção de Dependências)
 - Coroutines (Como um padrão de design de simultaneidade para simplificar o código executado de forma assíncrona)
 - Flow (Para programação de estilo reativo (de VM para UI))
+- Jacoco
 - Entre outras.
 ### Testes Unitários ✔️
 Para os testes Unitários, foi utilizado JUnit4, MockK e Turbine sendo realizado testes da ViewModel.

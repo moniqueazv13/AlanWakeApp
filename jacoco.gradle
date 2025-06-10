@@ -1,0 +1,55 @@
+// jacoco.gradle
+
+apply plugin: 'jacoco'
+
+// Configurações globais para as tarefas do JaCoCo
+jacoco {
+    toolVersion = "0.8.11" // Use a versão mais recente do JaCoCo
+}
+
+// Tarefa principal que gera o relatório de cobertura para a variante 'debug'
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
+
+    group = "Reporting"
+    description = "Gera o relatório de cobertura de testes do JaCoCo para a build de debug."
+
+    // Define quais relatórios serão gerados
+    reports {
+        xml.required = true     // Essencial para o GitHub Actions e outras ferramentas de CI
+        html.required = true    // Essencial para visualização local no navegador
+        csv.required = false
+    }
+
+    // Define os diretórios com o código-fonte (Java/Kotlin)
+    // O relatório HTML usará isso para mostrar o código com as linhas coloridas.
+    sourceDirectories.from = files([
+            "$project.projectDir/src/main/java",
+            "$project.projectDir/src/main/kotlin" // <-- CORRIGIDO
+    ])
+
+    // Define os diretórios com as classes compiladas (.class)
+    // JaCoCo analisa o bytecode para saber o que foi executado.
+    def classDirs = fileTree(dir: "$project.buildDir/tmp/kotlin-classes/debug",
+            excludes: [
+                    // Exclui arquivos gerados pelo Android/Dagger/Hilt/etc.
+                    '**/R.class',
+                    '**/R$*.class',
+                    '**/BuildConfig.*',
+                    '**/Manifest*.*',
+                    '**/*Test*.*',
+                    'android/databinding/**/*',
+                    '**/DataBinderMapperImpl*.*',
+                    '**/*_Binders*.*',
+                    '**/*_Factory*.*',
+                    '**/*_HiltModules*.*'
+            ])
+    classDirectories.from = files([classDirs])
+
+
+    // Define o local dos arquivos de execução (.ec) gerados pelos testes
+    // Estes arquivos contêm os dados brutos de cobertura.
+    executionData.from = fileTree(dir: "$project.buildDir", includes: [
+            "outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec",
+            "jacoco/testDebugUnitTest.exec" // Caminho alternativo para algumas versões do Gradle/AGP
+    ])
+}

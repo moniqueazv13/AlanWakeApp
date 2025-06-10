@@ -87,7 +87,8 @@ class TaskListViewModelTest {
     }
 
     @Test
-    fun `init should load data and emit Loading then Success when use case is successful`() = runTest {
+    fun `init should load data and emit Loading then Success when use case is successful`() =
+        runTest {
 
             viewModel.gameState.test {
 

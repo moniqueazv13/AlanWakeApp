@@ -1,36 +1,26 @@
 # Nome do workflow que aparecerá na aba "Actions" do GitHub
-name: Android CI
+name: Android CI & Custom Test Coverage Report
 
-# Define os gatilhos (triggers) para este workflow
 on:
-  # Aciona na criação de um Pull Request para a branch 'main'
   pull_request:
     branches: [ "main" ]
-  # Aciona em qualquer push para a branch 'main'
   push:
     branches: [ "main" ]
 
-# Define os trabalhos (jobs) que serão executados
 jobs:
-  # Nome do job. Pode ser qualquer nome.
-  test:
-    # O tipo de máquina virtual para executar o job
+  test-and-coverage-report:
     runs-on: ubuntu-latest
 
-    # Sequência de passos que compõem o job
     steps:
-      # 1. Baixa o código do seu repositório para a máquina virtual
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Configura o ambiente Java (JDK). Essencial para o Gradle.
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # 3. (Opcional, mas recomendado) Configura o cache do Gradle para acelerar builds futuras
       - name: Gradle Cache
         uses: actions/cache@v4
         with:
@@ -41,11 +31,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # 4. Dá permissão de execução para o script do Gradle Wrapper
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      # 5. Executa a tarefa do Gradle que roda os testes unitários
-      # 'testDebugUnitTest' roda os testes da variante 'debug'
-      - name: Run Unit Tests
-        run: ./gradlew testDebugUnitTest
+      # 1. COMANDO ATUALIZADO
+      #    Agora executamos nossa tarefa personalizada 'jacocoTestReport'.
+      - name: Run Unit Tests and Generate Custom JaCoCo Report
+        run: ./gradlew jacocoTestReport
+
+      # 2. CAMINHO DO XML ATUALIZADO
+      #    Esta action agora lê o relatório XML gerado pela nossa nova tarefa.
+      - name: Generate JaCoCo Report on PR
+        if: github.event_name == 'pull_request'
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          # O caminho agora aponta para o relatório gerado pela 'jacocoTestReport'.
+          paths: ${{ github.workspace }}/app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          title: "📊 Relatório de Cobertura de Testes"
+          update-comment: true
+
+      # 3. CAMINHO DO HTML ATUALIZADO
+      #    Esta action agora faz o upload da pasta correta do relatório HTML.
+      - name: Upload Full Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          # Nome do artefato que aparecerá para download
+          name: jacoco-html-report
+          # O caminho agora aponta para a pasta gerada pela 'jacocoTestReport'.
+          path: app/build/reports/jacoco/jacocoTestReport/

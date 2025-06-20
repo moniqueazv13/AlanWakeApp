@@ -4,6 +4,7 @@ import br.com.alanwakeapp.data.GameRepositoryImpl
 import br.com.alanwakeapp.data.LocalDataSource
 import br.com.alanwakeapp.domain.repository.GameRepository
 import br.com.alanwakeapp.domain.usecase.GetGameInfoUseCase
+import br.com.alanwakeapp.presentation.viewmodel.AlanWakeDetailsViewModel
 import br.com.alanwakeapp.presentation.viewmodel.AlanWakeViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -11,6 +12,7 @@ import org.koin.dsl.module
 
 val appModule = module {
     viewModel { AlanWakeViewModel(get()) }
+    viewModel { AlanWakeDetailsViewModel() }
 }
 
 val domainModule = module {
